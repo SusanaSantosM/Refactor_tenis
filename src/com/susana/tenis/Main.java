@@ -6,7 +6,7 @@ public class Main {
      */
     public static String getScore(int score1, int score2) {
         String typeScore = "";
-        int tempScore=0;
+        int auxiliarScore=0;
 
         if (score1 == score2) {
             switch (score1)
@@ -41,9 +41,9 @@ public class Main {
         {
             for (int i=1; i<3; i++)
             {
-                if (i==1) tempScore = score1;
-                else { typeScore+="-"; tempScore = score2;}
-                switch(tempScore)
+                if (i==1) auxiliarScore = score1;
+                else { typeScore+="-"; auxiliarScore = score2;}
+                switch(auxiliarScore)
                 {
                     case 0:
                         typeScore+="Love";
