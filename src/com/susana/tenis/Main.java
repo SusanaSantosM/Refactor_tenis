@@ -2,14 +2,19 @@ package com.susana.tenis;
 
 public class Main {
     /**
-     * metodo para devolver la puntuacion de tenis
+     * método para devolver la puntuacion de tenis
      */
-    public static String getScore(int score1, int score2) {
+    public static String getScore(int scorePlayer1, int scorePlayer2) {
+        /**
+         * score1 puntuación del primer jugador
+         * score2 puntuación del segundo jugador
+         * typeScore tipo de puntución del set
+         */
         String typeScore = "";
         int auxiliarScore=0;
 
-        if (score1 == score2) {
-            switch (score1)
+        if (scorePlayer1 == scorePlayer2) {
+            switch (scorePlayer1)
             {
                 case 0:
                     typeScore = "Love-All";
@@ -29,20 +34,24 @@ public class Main {
 
             }
         }
-        else if (score1 >=4 || score2 >=4)
+        else if (scorePlayer1 >=4 || scorePlayer2 >=4)
+        /**
+         * auxiliarScore variable auxiliar
+         * diferentPoint diferentcia de puntos entre jugadores
+         **/
         {
-            int minusResult = score1-score2;
-            if (minusResult==1) typeScore ="Advantage player1";
-            else if (minusResult ==-1) typeScore ="Advantage player2";
-            else if (minusResult>=2) typeScore = "Win for player1";
+            int diferentPoint = scorePlayer1-scorePlayer2;
+            if (diferentPoint==1) typeScore ="Advantage player1";
+            else if (diferentPoint ==-1) typeScore ="Advantage player2";
+            else if (diferentPoint>=2) typeScore = "Win for player1";
             else typeScore ="Win for player2";
         }
         else
         {
             for (int i=1; i<3; i++)
             {
-                if (i==1) auxiliarScore = score1;
-                else { typeScore+="-"; auxiliarScore = score2;}
+                if (i==1) auxiliarScore = scorePlayer1;
+                else { typeScore+="-"; auxiliarScore = scorePlayer2;}
                 switch(auxiliarScore)
                 {
                     case 0:
