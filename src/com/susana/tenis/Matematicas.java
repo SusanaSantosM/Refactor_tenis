@@ -1,3 +1,5 @@
+package com.susana.tenis;
+
 /**
  * Clase que contiene métodos matemáticos
  */
